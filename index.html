@@ -1,13 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://google.com" />
-    <title>Đang chuyển hướng...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tiêu đề hiển thị trên Tab trình duyệt -->
+    <title>Nâng Cấp Tài Khoản AI Premium</title>
+    
+    <!-- Phần CSS thiết kế giao diện (UI) -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6; /* Màu nền xám nhạt chuyên nghiệp */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Hiệu ứng đổ bóng nổi bật */
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+        h1 { color: #2c3e50; font-size: 26px; margin-bottom: 15px; font-weight: 800;}
+        p { color: #555; font-size: 16px; margin-bottom: 25px; line-height: 1.6; }
+        
+        .features {
+            text-align: left;
+            margin-bottom: 35px;
+            color: #444;
+            padding-left: 20px;
+            font-size: 15px;
+        }
+        .features li { margin-bottom: 12px; }
+
+        /* Nút bấm Kêu gọi hành động (Call to Action) */
+        .btn-upgrade {
+            background-color: #0056b3;
+            color: #ffffff;
+            border: none;
+            padding: 16px 32px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+        .btn-upgrade:hover { background-color: #004494; }
+        .btn-upgrade:active { transform: scale(0.98); } /* Hiệu ứng lún nút khi click */
+    </style>
 </head>
 <body>
+    <div class="container">
+        <!-- 1. TIÊU ĐỀ QUẢNG CÁO -->
+        <h1>Mở Khóa Sức Mạnh AI Đỉnh Cao</h1>
+        
+        <!-- 2. NỘI DUNG THUYẾT PHỤC -->
+        <p>Trải nghiệm gói tài khoản AI GEMINI PRO (CHÍNH CHỦ CỦA BẠN) với đầy đủ tính năng ưu việt, không giới hạn tốc độ và bảo mật tuyệt đối dành riêng cho công việc của bạn.</p>
+        
+        <ul class="features">
+            <li>🚀 Truy cập các mô hình thuật toán tiên tiến nhất</li>
+            <li>⚡ Xử lý dữ liệu tốc độ cao, không gián đoạn</li>
+            <li>🛡️ Hỗ trợ kỹ thuật và bảo hành 1 đổi 1 liên tục</li>
+        </ul>
+
+        <!-- 3. NÚT BẤM KÍCH HOẠT -->
+        <button class="btn-upgrade" onclick="thucHienChuyenHuong()">NÂNG CẤP NGAY</button>
+    </div>
+
+    <!-- Phần Javascript xử lý Logic chuyển hướng -->
     <script>
-        window.location.replace("https://google.com");
+        function thucHienChuyenHuong() {
+            // Dán link gốc (link thanh toán hoặc link đích) vào bên trong dấu ngoặc kép
+            window.location.href = "https://google.com";
+        }
     </script>
 </body>
 </html>
