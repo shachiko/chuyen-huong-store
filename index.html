@@ -3,81 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Tiêu đề hiển thị trên Tab trình duyệt -->
-    <title>Nâng Cấp Tài Khoản AI Premium</title>
-    
-    <!-- Phần CSS thiết kế giao diện (UI) -->
+    <title>Kích Hoạt Tài Khoản AI Premium</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f6; /* Màu nền xám nhạt chuyên nghiệp */
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Hiệu ứng đổ bóng nổi bật */
-            text-align: center;
-            max-width: 500px;
-            width: 90%;
-        }
-        h1 { color: #2c3e50; font-size: 26px; margin-bottom: 15px; font-weight: 800;}
-        p { color: #555; font-size: 16px; margin-bottom: 25px; line-height: 1.6; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f0f2f5; margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .box { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); width: 100%; max-width: 400px; text-align: center; }
+        h2 { color: #1a73e8; margin-top: 0; }
+        p { color: #555; font-size: 15px; margin-bottom: 20px; }
         
-        .features {
-            text-align: left;
-            margin-bottom: 35px;
-            color: #444;
-            padding-left: 20px;
-            font-size: 15px;
-        }
-        .features li { margin-bottom: 12px; }
-
-        /* Nút bấm Kêu gọi hành động (Call to Action) */
-        .btn-upgrade {
-            background-color: #0056b3;
-            color: #ffffff;
-            border: none;
-            padding: 16px 32px;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            width: 100%;
-            transition: background-color 0.3s, transform 0.1s;
-        }
-        .btn-upgrade:hover { background-color: #004494; }
-        .btn-upgrade:active { transform: scale(0.98); } /* Hiệu ứng lún nút khi click */
+        /* Định dạng ô nhập liệu */
+        input { width: 90%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px; }
+        input:focus { border-color: #1a73e8; outline: none; }
+        
+        /* Nút bấm chung */
+        button { background: #1a73e8; color: white; border: none; padding: 14px; width: 100%; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        button:hover { background: #1557b0; }
+        
+        /* Lớp Popup ẩn (Chỉ hiện khi gọi) */
+        #popupOverlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); justify-content: center; align-items: center; }
+        .popup-content { background: white; padding: 30px; border-radius: 10px; text-align: center; max-width: 450px; width: 90%; animation: popIn 0.3s ease-out; }
+        .popup-content h3 { color: #2e7d32; }
+        .email-highlight { color: #d32f2f; font-weight: bold; }
+        
+        @keyframes popIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- 1. TIÊU ĐỀ QUẢNG CÁO -->
-        <h1>Mở Khóa Sức Mạnh AI Đỉnh Cao</h1>
-        
-        <!-- 2. NỘI DUNG THUYẾT PHỤC -->
-        <p>Trải nghiệm gói tài khoản AI GEMINI PRO (CHÍNH CHỦ CỦA BẠN) với đầy đủ tính năng ưu việt, không giới hạn tốc độ và bảo mật tuyệt đối dành riêng cho công việc của bạn.</p>
-        
-        <ul class="features">
-            <li>🚀 Truy cập các mô hình thuật toán tiên tiến nhất</li>
-            <li>⚡ Xử lý dữ liệu tốc độ cao, không gián đoạn</li>
-            <li>🛡️ Hỗ trợ kỹ thuật và bảo hành 1 đổi 1 liên tục</li>
-        </ul>
 
-        <!-- 3. NÚT BẤM KÍCH HOẠT -->
-        <button class="btn-upgrade" onclick="thucHienChuyenHuong()">NÂNG CẤP NGAY</button>
+    <!-- 1. FORM NHẬP THÔNG TIN CƠ BẢN -->
+    <div class="box" id="formContainer">
+        <h2>Hệ Thống Đăng Ký</h2>
+        <p>Vui lòng nhập thông tin để hệ thống chuẩn bị tài nguyên AI cho bạn.</p>
+        <input type="text" id="cusName" placeholder="Nhập tên của bạn" required>
+        <input type="email" id="cusEmail" placeholder="Nhập địa chỉ Email" required>
+        <button onclick="hienThiPopup()">Kiểm Tra Hệ Thống</button>
     </div>
 
-    <!-- Phần Javascript xử lý Logic chuyển hướng -->
+    <!-- 2. POPUP CHÀO MỪNG VÀ CHUYỂN HƯỚNG -->
+    <div id="popupOverlay">
+        <div class="popup-content">
+            <h3 id="welcomeMsg">Chào mừng!</h3>
+            <p>Hệ thống đã xác nhận thông tin. Đường truyền bảo mật đã sẵn sàng để nâng cấp tài khoản cho bạn.</p>
+            <button onclick="chuyenHuong()">Nâng cấp ngay cho email: <br><span class="email-highlight" id="displayEmail"></span></button>
+        </div>
+    </div>
+
+    <!-- 3. LOGIC XỬ LÝ -->
     <script>
-        function thucHienChuyenHuong() {
-            // Dán link gốc (link thanh toán hoặc link đích) vào bên trong dấu ngoặc kép
+        function hienThiPopup() {
+            let name = document.getElementById('cusName').value.trim();
+            let email = document.getElementById('cusEmail').value.trim();
+
+            if(name === "" || email === "") {
+                alert("Vui lòng điền đầy đủ Tên và Email!");
+                return;
+            }
+
+            // Gắn dữ liệu khách nhập vào Popup
+            document.getElementById('welcomeMsg').innerText = "Chào mừng, " + name + "!";
+            document.getElementById('displayEmail').innerText = email;
+
+            // Đóng Form, Mở Popup
+            document.getElementById('popupOverlay').style.display = 'flex';
+        }
+
+        function chuyenHuong() {
+            // DÁN LINK ĐÍCH (Thanh toán / Nhận tài khoản AI) VÀO ĐÂY
             window.location.href = "https://google.com";
         }
     </script>
