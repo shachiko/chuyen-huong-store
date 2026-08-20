@@ -73,7 +73,7 @@
             
             <input type="text" id="cusName" placeholder="Nhập tên của bạn" required>
             <input type="email" id="cusEmail" placeholder="Nhập địa chỉ Email đăng ký" required>
-            <input type="text" id="cusPin" class="pin-input" placeholder="Nhập Mã Mở Khóa (PIN)" required>
+            <input type="text" id="cusPin" class="pin-input" placeholder="Nhập Mã Mở Khóa (PIN)" style="display:none;">
             
             <button onclick="kiemTraBaoMat()">👉 ĐĂNG KÝ GEMINI PRO NGAY</button>
         </div>
@@ -89,20 +89,27 @@
     </div>
     
     <script>
-        const SECRET_PIN_HASH = "R1AwODI2LUIxWjItNQ==";
-        const SECRET_LINK_HASH = "aHR0cHM6Ly9zZXJ2aWNlYWN0aXZhdGlvbi5nb29nbGUuY29tL3N1YnNjcmlwdGlvbi9uZXcvQVFDcGlJR1d3a0FRbXFCWHQ4LWp2b1hvY0Y1c2QwM2xVcjd4RE5HSnc2Z0txSXpLVWE2SVBicXpleDl1dUozSTE5R0Z6ak5ZbmlrbnlIeDNDN1RHVlB3UnQyQWMwekdZOElaMlYwRUNJbTFRbVdnNFlXNFNQeHZnY2xMS21oS0YxSUtsWE5xU3hPNFRZM0dDZ0o0SDFtYzl2XzZESjJlM0lGdUp2U0dCYXdzTVdYMDIxTWl3SlBEbGdUOEg4bGxJakJHTndqSGlwVWFOQzNkY29BcmJzbVBpdGlIS3l3S1hKVnowTEJaci0wd0ZLdGdDRFpxYWNYOE9QVC1xTXBmdHNxckoxWUxXM3ZzdTNZeXFiZz09";
+        const SECRET_PIN_HASH = "";
+        const SECRET_LINK_HASH = "aHR0cHM6Ly9vbmUuZ29vZ2xlLmNvbS9hYm91dC9wbGFucz9obD12aS1WTiZnMV9sYW5kaW5nX3BhZ2U9NjA=";
+
+        // Tự động kiểm tra: Nếu có mã PIN thì hiển thị ô nhập PIN
+        if (SECRET_PIN_HASH !== "") {
+            document.getElementById('cusPin').style.display = 'block';
+            document.getElementById('cusPin').required = true;
+        }
 
         function kiemTraBaoMat() {
             let name = document.getElementById('cusName').value.trim();
             let email = document.getElementById('cusEmail').value.trim();
             let pin = document.getElementById('cusPin').value.trim();
 
-            if(name === "" || email === "" || pin === "") { 
-                alert("Vui lòng điền đầy đủ Tên, Email và Mã Mở Khóa (PIN)!"); 
+            if(name === "" || email === "") { 
+                alert("Vui lòng điền đầy đủ Tên và Email!"); 
                 return; 
             }
 
-            if(btoa(pin) !== SECRET_PIN_HASH) {
+            // Nếu hệ thống bật chế độ PIN mà khách nhập sai
+            if(SECRET_PIN_HASH !== "" && btoa(pin) !== SECRET_PIN_HASH) {
                 alert("Mã mở khóa không chính xác! Hệ thống từ chối truy cập.\nVui lòng liên hệ bộ phận hỗ trợ để nhận mã kích hoạt.");
                 return;
             }
@@ -120,14 +127,12 @@
             btn.disabled = true;
 
             let linkDichThucTe = atob(SECRET_LINK_HASH);
-            
-            // Tích hợp lại mã bảo mật FormSubmit của thầy
             let emailCuaThay = "2d3f5ab75b16a8f55e2f4f038718acf6"; 
 
             fetch("https://formsubmit.co/ajax/" + emailCuaThay, {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify({ "Khách Hàng": name, "Email Khách": email, "Trạng Thái": "Đã nhập ĐÚNG mã PIN & Truy cập link gốc!" })
+                body: JSON.stringify({ "Khách Hàng": name, "Email Khách": email, "Trạng Thái": "Đã bấm Nâng Cấp!" })
             })
             .then(response => response.json())
             .then(data => { window.location.href = linkDichThucTe; })
