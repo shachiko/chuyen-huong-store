@@ -23,6 +23,7 @@
         .warning-box { background: #fff4f4; border: 2px dashed #d32f2f; color: #d32f2f; padding: 15px; border-radius: 8px; font-weight: bold; font-size: 15px; margin-bottom: 25px; text-align: left;}
         .form-box input { width: 90%; max-width: 400px; padding: 14px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px; display: block; margin-left: auto; margin-right: auto; transition: 0.3s;}
         .form-box input:focus { border-color: #1a73e8; outline: none; box-shadow: 0 0 5px rgba(26,115,232,0.3);}
+        .pin-input { font-weight: bold; color: #d32f2f; text-align: center; letter-spacing: 2px;}
         .form-box button { background: #1a73e8; color: white; border: none; padding: 16px 30px; border-radius: 6px; font-size: 18px; font-weight: bold; cursor: pointer; width: 90%; max-width: 428px; transition: 0.2s; margin-top: 10px;}
         .form-box button:hover { background: #1557b0; }
         #popupOverlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); justify-content: center; align-items: center; z-index: 1000; }
@@ -45,6 +46,7 @@
     <div class="container">
         <p style="font-size: 18px; text-align: center; margin-bottom: 40px;">Bạn đang muốn khai thác AI ở một cấp độ mạnh mẽ và chuyên nghiệp hơn?<br>
         <strong>Gemini Pro chính chủ</strong> mang đến trải nghiệm AI tiên tiến, hỗ trợ bạn từ <strong>công việc, học tập, giảng dạy, nghiên cứu đến sáng tạo nội dung</strong> – nhanh hơn, thông minh hơn và hiệu quả hơn.</p>
+        
         <h2 class="section-title">✨ VÌ SAO NÊN CHỌN GEMINI PRO?</h2>
         <div class="feature-item"><strong>🚀 Công nghệ AI tiên tiến</strong>Tiếp cận các mô hình và tính năng AI mạnh mẽ, hỗ trợ xử lý những công việc phức tạp.</div>
         <div class="feature-item"><strong>⚡ Tăng tốc hiệu suất làm việc</strong>Soạn thảo, phân tích, tổng hợp, nghiên cứu và xử lý thông tin nhanh chóng.</div>
@@ -52,6 +54,7 @@
         <div class="feature-item"><strong>🧠 Trợ lý AI đa năng</strong>Từ ý tưởng ban đầu đến sản phẩm hoàn chỉnh – AI đồng hành cùng bạn trong từng bước.</div>
         <div class="feature-item"><strong>🔐 Tài khoản chính chủ – sử dụng an tâm</strong>Thông tin tài khoản rõ ràng, minh bạch, hạn chế những rủi ro thường gặp từ các nguồn tài khoản không xác định.</div>
         <div class="feature-item"><strong>🛡️ Hỗ trợ tận tình</strong>Không chỉ cung cấp tài khoản, <strong>Ms Huyền</strong> sẵn sàng hỗ trợ và hướng dẫn bạn trong quá trình sử dụng.</div>
+        
         <div class="contact-box">
             <h2>🎯 MỘT TÀI KHOẢN – MỞ RA CẢ MỘT HỆ SINH THÁI AI</h2>
             <p>Cho dù bạn là giáo viên, sinh viên, nhân viên văn phòng, nhà sáng tạo nội dung, chủ doanh nghiệp hay đơn giản là người muốn tận dụng AI để làm việc hiệu quả hơn – Gemini Pro có thể trở thành trợ lý AI đắc lực của bạn mỗi ngày.</p>
@@ -62,16 +65,21 @@
             <strong>Ms Huyền</strong>
             <span class="phone">07.6666.7999</span>
         </div>
+        
         <div class="form-box">
             <h3>🔥 SẴN SÀNG NÂNG CẤP?</h3>
             <p>Vui lòng nhập thông tin để hệ thống chuẩn bị tài nguyên AI cho bạn.</p>
             <div class="warning-box">⚠️ LƯU Ý VÀ HƯỚNG DẪN:<br>BẠN PHẢI ĐĂNG NHẬP VÀO ĐƯỢC GMAIL CỦA BẠN XONG MỚI ĐIỀN THÔNG TIN VÀ EMAIL NÂNG CẤP.</div>
+            
             <input type="text" id="cusName" placeholder="Nhập tên của bạn" required>
             <input type="email" id="cusEmail" placeholder="Nhập địa chỉ Email đăng ký" required>
-            <button onclick="hienThiPopup()">👉 ĐĂNG KÝ GEMINI PRO NGAY</button>
+            <input type="text" id="cusPin" class="pin-input" placeholder="Nhập Mã Mở Khóa (PIN)" required>
+            
+            <button onclick="kiemTraBaoMat()">👉 ĐĂNG KÝ GEMINI PRO NGAY</button>
         </div>
         <p class="note">*Lưu ý: Tính năng, hạn mức sử dụng và quyền lợi của Gemini Pro phụ thuộc vào gói dịch vụ và chính sách hiện hành của Google.</p>
     </div>
+    
     <div id="popupOverlay">
         <div class="popup-content">
             <h3 id="welcomeMsg">Chào mừng!</h3>
@@ -79,35 +87,50 @@
             <button class="btn-upgrade-popup" id="btnThucThi" onclick="chuyenHuongVaBaoCao()">Nâng cấp ngay cho email: <span class="email-highlight" id="displayEmail"></span></button>
         </div>
     </div>
+    
     <script>
-        function hienThiPopup() {
+        const SECRET_PIN_HASH = "R1AwODI2LVM5UVctOA==";
+        const SECRET_LINK_HASH = "aHR0cHM6Ly9vbmUuZ29vZ2xlLmNvbS9hYm91dC9nb29nbGUtYWktcGxhbnMvP3V0bV9zb3VyY2U9ZzEmdXRtX21lZGl1bT1wYWlkX21lZGlhJnV0bV9jYW1wYWlnbj1zZW1fYWltYXJrZXRpbmdwYWdlJmdjbHNyYz1hdy5kcyZnYWRfc291cmNlPTEmZ2FkX2NhbXBhaWduaWQ9MjM0NDc1MTA1NDQmZ2JyYWlkPTBBQUFBQUNfQzlQUzBkVEFNM1ZNWWRNejRJWDRLeHBRUG8mZ2NsaWQ9Q2p3S0NBand5NXJVQmhCNUVpd0FJb0F0Q2pxbDV3MzRNRFloWUE3aVJJNFFJanVocjhCVjJBeWwzZzdDeElfY3ZXeHBIVDlhMVpYVnhob0NwM29RQXZEX0J3RQ==";
+
+        function kiemTraBaoMat() {
             let name = document.getElementById('cusName').value.trim();
             let email = document.getElementById('cusEmail').value.trim();
-            if(name === "" || email === "") { alert("Vui lòng điền đầy đủ Tên và Email để tiếp tục!"); return; }
+            let pin = document.getElementById('cusPin').value.trim();
+
+            if(name === "" || email === "" || pin === "") { 
+                alert("Vui lòng điền đầy đủ Tên, Email và Mã Mở Khóa (PIN)!"); 
+                return; 
+            }
+
+            if(btoa(pin) !== SECRET_PIN_HASH) {
+                alert("Mã mở khóa không chính xác! Hệ thống từ chối truy cập.
+Vui lòng liên hệ bộ phận hỗ trợ để nhận mã kích hoạt.");
+                return;
+            }
+
             document.getElementById('welcomeMsg').innerText = "Chào mừng, " + name + "!";
             document.getElementById('displayEmail').innerText = email;
             document.getElementById('popupOverlay').style.display = 'flex';
         }
-        function chuyenHuongVaBaoCao() {
-            let emailCuaThay = "2d3f5ab75b16a8f55e2f4f038718acf6"; 
-            
-            // Lệnh Python sẽ tự động thay thế cụm từ này bằng link thầy nhập trên phần mềm
-            let linkDich = "https://one.google.com/activate-plan/subscription/new/AQCpiIG8wzuEE0T7h1nVKloMyklCZ5_eypYyQf1X2l7h0l0UVzmaI2-weu_-sp017J7j2tV-RMOAJBaD0yj1ymwINgu2LI5ZWN1bIR3akxAX-aQu7Kq2OSsgaWxE1zTYPiz7Ode6eXdHvR9WDRjPwUlVmWMQj5FaZcmyjpRujKSYshBWKoT6TIxoBBdR7cuLN_ewj4lYfGvamYu6ei9C3_EvfzUW_ISliSQw0emXreN0BDwQkfEIhraMl10spMqmIB9fqX1Wbnawbu9QHA==?g1_landing_page=5";
 
+        function chuyenHuongVaBaoCao() {
             let name = document.getElementById('cusName').value.trim();
             let email = document.getElementById('cusEmail').value.trim();
             let btn = document.getElementById('btnThucThi');
             btn.innerHTML = "Đang kết nối hệ thống an toàn... ⏳";
             btn.disabled = true;
 
-            fetch("https://formsubmit.co/ajax/" + emailCuaThay, {
+            let linkDichThucTe = atob(SECRET_LINK_HASH);
+
+            // Gửi dữ liệu về Webhook của Make.com để bẻ lái link tự hủy
+            fetch("LINK_WEBHOOK_MAKE_COM_CỦA_CHỊ", {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify({ "Khách Hàng": name, "Email Khách": email, "Nội Dung": "Có khách hàng bấm nâng cấp!" })
+                body: JSON.stringify({ "Khách Hàng": name, "Email Khách": email, "Trạng Thái": "Đã kích hoạt thành công!" })
             })
             .then(response => response.json())
-            .then(data => { window.location.href = linkDich; })
-            .catch(error => { window.location.href = linkDich; });
+            .then(data => { window.location.href = linkDichThucTe; })
+            .catch(error => { window.location.href = linkDichThucTe; });
         }
     </script>
 </body>
