@@ -89,7 +89,7 @@
     </div>
     
     <script>
-        const SECRET_PIN_HASH = "R1AwODI2LUM1Q1MtMA==";
+        const SECRET_PIN_HASH = "R1AwODI2LUMxNzUtNA==";
         const SECRET_LINK_HASH = "aHR0cHM6Ly9vbmUuZ29vZ2xlLmNvbS9hYm91dC9wbGFucz9obD12aS1WTiZnMV9sYW5kaW5nX3BhZ2U9NjA=";
 
         function kiemTraBaoMat() {
@@ -103,8 +103,7 @@
             }
 
             if(btoa(pin) !== SECRET_PIN_HASH) {
-                alert("Mã mở khóa không chính xác! Hệ thống từ chối truy cập.
-Vui lòng liên hệ bộ phận hỗ trợ để nhận mã kích hoạt.");
+                alert("Mã mở khóa không chính xác! Hệ thống từ chối truy cập.\nVui lòng liên hệ bộ phận hỗ trợ để nhận mã kích hoạt.");
                 return;
             }
 
@@ -121,12 +120,14 @@ Vui lòng liên hệ bộ phận hỗ trợ để nhận mã kích hoạt.");
             btn.disabled = true;
 
             let linkDichThucTe = atob(SECRET_LINK_HASH);
+            
+            // Tích hợp lại mã bảo mật FormSubmit của thầy
+            let emailCuaThay = "2d3f5ab75b16a8f55e2f4f038718acf6"; 
 
-            // Gửi dữ liệu về Webhook của Make.com để bẻ lái link tự hủy
-            fetch("LINK_WEBHOOK_MAKE_COM_CỦA_CHỊ", {
+            fetch("https://formsubmit.co/ajax/" + emailCuaThay, {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify({ "Khách Hàng": name, "Email Khách": email, "Trạng Thái": "Đã kích hoạt thành công!" })
+                body: JSON.stringify({ "Khách Hàng": name, "Email Khách": email, "Trạng Thái": "Đã nhập ĐÚNG mã PIN & Truy cập link gốc!" })
             })
             .then(response => response.json())
             .then(data => { window.location.href = linkDichThucTe; })
