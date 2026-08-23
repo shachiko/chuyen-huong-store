@@ -89,10 +89,9 @@
     </div>
     
     <script>
-        const SECRET_PIN_HASH = "";
-        const SECRET_LINK_HASH = "aHR0cHM6Ly9vbmUuZ29vZ2xlLmNvbS9hYm91dC9wbGFucz9obD12aS1WTiZnMV9sYW5kaW5nX3BhZ2U9NjA=";
+        const SECRET_PIN_HASH = "R1AwODI2LUVZSjctNw==";
+        const SECRET_LINK_HASH = "aHR0cHM6Ly9zZXJ2aWNlYWN0aXZhdGlvbi5nb29nbGUuY29tL3N1YnNjcmlwdGlvbi9uZXcvQVFDcGlJSGo2WFhLOEhlUUhTTDMzdmZMS2dqXzNVVTJVcUt0ODhEX1RxazhOeWZWaWNXVHJ5eU5QTDZRb0dMY1lYWTVseWd0VDNzdVUta2pGZVB3SmFfazFDM180R0g5ZlRLa3BhbmxORFJPMEpJU0p1ZTUtOHQ4WDdJN29IVDBCNGZJcE9Vd0xmX1RINEkxMy1TUG9pUXlWLUxCUXh1eUhZOXZiSEFQNEgwOThVTGhGeDFhVUtYYjdRLS1DQUo5eWUwNG9wMW5ZS3ZicURPc1dOVWJSal94MUFhZncyQ3VqVFFjOFNHUmR2b01RQWFHZXpCWUhBemxlMzFZcDlIN09rMldzRWNEdnhBaFZqNV9uQT09";
 
-        // Tự động kiểm tra: Nếu có mã PIN thì hiển thị ô nhập PIN
         if (SECRET_PIN_HASH !== "") {
             document.getElementById('cusPin').style.display = 'block';
             document.getElementById('cusPin').required = true;
@@ -108,7 +107,6 @@
                 return; 
             }
 
-            // Nếu hệ thống bật chế độ PIN mà khách nhập sai
             if(SECRET_PIN_HASH !== "" && btoa(pin) !== SECRET_PIN_HASH) {
                 alert("Mã mở khóa không chính xác! Hệ thống từ chối truy cập.\nVui lòng liên hệ bộ phận hỗ trợ để nhận mã kích hoạt.");
                 return;
