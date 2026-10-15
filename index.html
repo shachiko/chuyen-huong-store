@@ -6,7 +6,7 @@
     <title>Mở Khóa Sức Mạnh AI Đỉnh Cao - Gemini Pro Chính Chủ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #070913;
@@ -37,7 +37,7 @@
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Be Vietnam Pro', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             line-height: 1.7;
             color: var(--text-main);
             background-color: var(--bg);
@@ -827,24 +827,31 @@
         }
 
         function kiemTraBaoMat() {
-            let name = document.getElementById('cusName').value.trim();
-            let email = document.getElementById('cusEmail').value.trim();
-            let pin = document.getElementById('cusPin').value.trim();
+            let nameInput = document.getElementById('cusName');
+            let emailInput = document.getElementById('cusEmail');
+            let pinInput = document.getElementById('cusPin');
 
-            if(name === "" || email === "") { 
+            let name = nameInput ? nameInput.value.trim() : "";
+            let email = emailInput ? emailInput.value.trim() : "";
+            let pin = pinInput ? pinInput.value.trim() : "";
+
+            if (name === "" || email === "") { 
                 alert("Vui lòng điền đầy đủ Họ tên và Email!"); 
                 return; 
             }
 
-            if(SECRET_PIN_HASH !== "" && btoa(pin) !== SECRET_PIN_HASH) {
-                alert("Mã mở khóa không chính xác! Hệ thống từ chối truy cập.
-Vui lòng liên hệ bộ phận hỗ trợ để nhận mã kích hoạt.");
+            if (SECRET_PIN_HASH !== "" && btoa(pin) !== SECRET_PIN_HASH) {
+                alert("Mã mở khóa không chính xác! Hệ thống từ chối truy cập. Vui lòng liên hệ bộ phận hỗ trợ để nhận mã kích hoạt.");
                 return;
             }
 
-            document.getElementById('welcomeMsg').innerText = "Chào mừng, " + name + "!";
-            document.getElementById('displayEmail').innerText = email;
-            document.getElementById('popupOverlay').style.display = 'flex';
+            let welcomeMsg = document.getElementById('welcomeMsg');
+            let displayEmail = document.getElementById('displayEmail');
+            let popupOverlay = document.getElementById('popupOverlay');
+
+            if (welcomeMsg) welcomeMsg.innerText = "Chào mừng, " + name + "!";
+            if (displayEmail) displayEmail.innerText = email;
+            if (popupOverlay) popupOverlay.style.display = 'flex';
         }
 
         function chuyenHuongVaBaoCao() {
