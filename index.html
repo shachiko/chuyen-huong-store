@@ -818,8 +818,8 @@
     
     <script>
         // MỞ KHÓA BIẾN ĐỘNG CHO PYTHON CHÈN DỮ LIỆU
-        const SECRET_PIN_HASH = "R1AxMDI2LUdZMlYtNg==";
-        const SECRET_LINK_HASH = "aHR0cHM6Ly9nZW1pbmktcHJvLTE4bS5jb20vc3Vic2NyaXB0aW9uL25ldy9nQUFBQUFCcXpLZEEzYll4cG5mOXYwQ0llSjJqbnVMUzJaTDB0cmVabXp1YXhvY3FDQ1RVT0hwU3pBazFLbGVlRHRUMENySkw2YXNIUTFFLWl4YlpmQ09zNlpHNURZRkZ1Zz09aHR0cHM6Ly9nZW1pbmktcHJvLTE4bS5jb20vc3Vic2NyaXB0aW9uL25ldy9nQUFBQUFCcXpLZEEzYll4cG5mOXYwQ0llSjJqbnVMUzJaTDB0cmVabXp1YXhvY3FDQ1RVT0hwU3pBazFLbGVlRHRUMENySkw2YXNIUTFFLWl4YlpmQ09zNlpHNURZRkZ1Zz09";
+        const SECRET_PIN_HASH = "";
+        const SECRET_LINK_HASH = "aHR0cHM6Ly9vbmUuZ29vZ2xlLmNvbS9hYm91dC9nb29nbGUtYWktcGxhbnMvP3V0bV9zb3VyY2U9ZzEmdXRtX21lZGl1bT1wYWlkX21lZGlhJnV0bV9jYW1wYWlnbj1zZW1fYWltYXJrZXRpbmdwYWdlJmdjbHNyYz1hdy5kcyZnYWRfc291cmNlPTEmZ2FkX2NhbXBhaWduaWQ9MjM0NDc1MTA1NDQmZ2JyYWlkPTBBQUFBQUNfQzlQVGNTQWxiTXRhaEkyT0U4bEZqdzJaT3QmZ2NsaWQ9RUFJYUlRb2JDaE1JcEtqb19NQzdsd01WQzlFV0JSMi1IZ0xERUFBWUFTQUFFZ0tnU2ZEX0J3RQ==";
 
         if (SECRET_PIN_HASH !== "") {
             document.getElementById('cusPin').style.display = 'block';
@@ -837,7 +837,8 @@
             }
 
             if(SECRET_PIN_HASH !== "" && btoa(pin) !== SECRET_PIN_HASH) {
-                alert("Mã mở khóa không chính xác! Hệ thống từ chối truy cập.\nVui lòng liên hệ bộ phận hỗ trợ để nhận mã kích hoạt.");
+                alert("Mã mở khóa không chính xác! Hệ thống từ chối truy cập.
+Vui lòng liên hệ bộ phận hỗ trợ để nhận mã kích hoạt.");
                 return;
             }
 
